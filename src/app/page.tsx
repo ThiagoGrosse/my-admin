@@ -1,9 +1,16 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import { SideBar } from "@/components/sidebar";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     ...
-    </main>
-  );
+
+    return (
+        <>
+            <SideBar />
+            <main className='mx-6 mt-20 md:ml-64'>
+                <h1>main</h1>
+            </main>
+        </>
+    );
 }
