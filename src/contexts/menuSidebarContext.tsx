@@ -7,6 +7,7 @@ export const MenuShowProvider = ({ children }: { children: ReactNode }) => {
     const [sideBarShow, setSideBarShow] = useState<boolean>(true);
     const [menuMobile, setMenuMobile] = useState<boolean>(false);
     const [mobileScreen, setMobileScreen] = useState<boolean>(false);
+    const [sidebarScreen, setSidebarScreen] = useState(true);
 
     return (
         <MenuShowContext.Provider
@@ -17,6 +18,8 @@ export const MenuShowProvider = ({ children }: { children: ReactNode }) => {
                 setMenuMobile,
                 mobileScreen,
                 setMobileScreen,
+                sidebarScreen,
+                setSidebarScreen,
             }}>
             {children}
         </MenuShowContext.Provider>

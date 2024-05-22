@@ -5,4 +5,6 @@ export type MenuShowType = {
     setMenuMobile: (value: boolean) => void;
     mobileScreen: boolean;
     setMobileScreen: (value: boolean) => void;
+    sidebarScreen: boolean;
+    setSidebarScreen: (value: boolean) => void;
 };

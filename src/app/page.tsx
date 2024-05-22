@@ -1,5 +1,6 @@
 "use client";
 
+import { Main } from "@/components/main";
 import { SideBar } from "@/components/sidebar";
 import { MenuShowProvider } from "@/contexts/menuSidebarContext";
 import { UserProvider } from "@/contexts/userContext";
@@ -9,9 +10,7 @@ export default function Home() {
         <UserProvider>
             <MenuShowProvider>
                 <SideBar />
-                <main className='mx-6 mt-20 md:ml-64'>
-                    <h1>main</h1>
-                </main>
+                <Main />
             </MenuShowProvider>
         </UserProvider>
     );

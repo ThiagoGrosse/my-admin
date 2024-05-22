@@ -8,17 +8,19 @@ import { NavBar } from "./navBar";
 export const SideBar = () => {
     const showMenuCtx = useMenuShow();
 
+    useEffect(() => {
+        if (window.innerWidth < 640) {
+            showMenuCtx?.setMobileScreen(true);
+            showMenuCtx?.setSidebarScreen(false);
+        } else {
+            showMenuCtx?.setMobileScreen(false);
+            showMenuCtx?.setSidebarScreen(true);
+        }
+    });
+
     const menuMobile = showMenuCtx?.menuMobile;
     const mobileScreen = showMenuCtx?.mobileScreen;
     const sideBarShow = showMenuCtx?.sideBarShow;
-
-    useEffect(() => {
-        if (window.innerWidth < 400) {
-            showMenuCtx?.setMobileScreen(true);
-        } else {
-            showMenuCtx?.setMobileScreen(false);
-        }
-    });
 
     const handleSidebarToogle = () => {
         showMenuCtx?.setSideBarShow(!showMenuCtx?.sideBarShow);
@@ -26,8 +28,6 @@ export const SideBar = () => {
 
     const handleMenuMobileToogle = () => {
         showMenuCtx?.setMenuMobile(!showMenuCtx.menuMobile);
-
-        console.log(showMenuCtx?.menuMobile);
     };
 
     return (
