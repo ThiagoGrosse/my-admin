@@ -1,4 +1,6 @@
 import { useMenuShow } from "@/contexts/menuSidebarContext";
+import { Cards } from "./cards";
+import { Charts } from "./charts";
 
 export const Main = () => {
     const showMenu = useMenuShow();
@@ -12,8 +14,10 @@ export const Main = () => {
             className={`${sideBarShow && sidebarScreen && "ml-64 mt-5"}
             ${!sideBarShow && sidebarScreen && "ml-28 mt-5"}
             ${mobileScreen && "ml-5 mt-16"}
-             mr-5 bg-blue-500 transition-all duration-300`}>
-            <h1>teste</h1>
+             mr-5 transition-all duration-300`}>
+            <Cards />
+
+            <Charts />
         </main>
     );
 };

@@ -7,11 +7,13 @@ import { UserProvider } from "@/contexts/userContext";
 
 export default function Home() {
     return (
-        <UserProvider>
-            <MenuShowProvider>
-                <SideBar />
-                <Main />
-            </MenuShowProvider>
-        </UserProvider>
+        <>
+            <UserProvider>
+                <MenuShowProvider>
+                    <SideBar />
+                    <Main />
+                </MenuShowProvider>
+            </UserProvider>
+        </>
     );
 }

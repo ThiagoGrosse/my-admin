@@ -1,5 +1,5 @@
-import CIcon from "@coreui/icons-react";
-import * as icon from "@coreui/icons";
+import { FaArrowLeft, FaArrowRight, FaBars } from "react-icons/fa6";
+
 import { useEffect } from "react";
 import { useMenuShow } from "@/contexts/menuSidebarContext";
 import { UserMenu } from "./userMenu";
@@ -35,12 +35,10 @@ export const SideBar = () => {
             <div className='fixed top-5 left-5'>
                 <button
                     type='button'
-                    className='flex justify-center items-center w-20 md:hidden'>
-                    <CIcon
-                        icon={icon.cilHamburgerMenu}
-                        className='fill-white w-6'
-                        onClick={handleMenuMobileToogle}
-                    />
+                    className='flex justify-center items-center w-20 md:hidden'
+                    onClick={handleMenuMobileToogle}>
+                    <FaBars />
+
                     <span className='text-lg font-bold ml-2'>Menu</span>
                 </button>
             </div>
@@ -68,16 +66,10 @@ export const SideBar = () => {
                 {!menuMobile && (
                     <button
                         type='button'
-                        className='px-4 py-4 text-gray-400 shadow-md shadow-gray-600 rounded-full hover:shadow-white hover:text-white'>
-                        <CIcon
-                            icon={
-                                sideBarShow
-                                    ? icon.cilArrowThickFromRight
-                                    : icon.cilArrowThickFromLeft
-                            }
-                            className='w-6'
-                            onClick={handleSidebarToogle}
-                        />
+                        className='p-4 rounded-full shadow-md shadow-gray-800 border border-gray-800 hover:border-white/30 hover:shadow-white/30'
+                        onClick={handleSidebarToogle}>
+                        {sideBarShow && <FaArrowLeft />}
+                        {!sideBarShow && <FaArrowRight />}
                     </button>
                 )}
             </aside>
